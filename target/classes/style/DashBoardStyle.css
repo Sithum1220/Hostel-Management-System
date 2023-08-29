@@ -1,0 +1,10 @@
+.actionBtn {
+    -fx-shape: "M 100 300 L 240 300 L 280 340 L 240 380 L 100 380 L 100 300";
+    -fx-background-color: #33383C;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 10, 0.1, 0, 0);
+}
+
+.actionBtn:hover{
+    -fx-background-color: #236DD8;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 30, 0.1, 0, 0);
+}

@@ -1,0 +1,29 @@
+.backBtn{
+    -fx-shape: "M 100 300 L 160 240 L 160 260 L 120 300 L 160 340 L 160 360 L 100 300";
+    -fx-background-color:white;
+    -fx-effect: dropshadow(gaussian, #33383C, 10, 0.1, 0, 0);
+}
+.backBtn:hover{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 30, 0.1, 0, 0);
+}
+.countBox{
+    -fx-shape: "M 100 280 L 100 180 Q 100 140 140 140 L 340 140 L 340 280 Q 340 320 300 320 L 100 320 L 100 280 ";
+    -fx-background-color: #33383C;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 10, 0.1, 0, 0);
+}
+.countBoxText{
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+}
+.homeBtn{
+    -fx-shape: "M 160 320 L 140 340 L 120 340 L 200 260 L 280 340 L 260 340 L 200 280 L 160 320 L 160 400 L 180 400 L 180 360 L 220 360 L 220 400 L 240 400 L 240 400 L 240 400 L 240 400 L 240 400 L 240 320  ";
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 5, 0.1, 0, 0);
+}
+.homeBtn:hover{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 30, 0.1, 0, 0);
+}
