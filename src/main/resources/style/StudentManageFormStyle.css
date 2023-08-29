@@ -12,6 +12,10 @@
     -fx-background-color: #33383C;
     -fx-effect: dropshadow(gaussian, #FFFFFF, 10, 0.1, 0, 0);
 }
+.countBox:hover{
+    -fx-background-color: #33383C;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 20, 0.1, 0, 0);
+}
 .countBoxText{
     -fx-font-size: 15;
     -fx-font-weight: bold;
@@ -26,4 +30,30 @@
 .homeBtn:hover{
     -fx-background-color: white;
     -fx-effect: dropshadow(gaussian, #FFFFFF, 30, 0.1, 0, 0);
+}
+.tableColum{
+    -fx-border-color: white;
+    -fx-border-radius: 20px;
+}
+.addBtn{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 10, 0.1, 0, 0);
+    -fx-background-radius: 100%;
+}
+.popupwindow{
+    -fx-shape: "M 270 350 Q 250 350 250 330 L 250 300 Q 250 280 270 280 L 390 280 Q 410 280 410 300 L 410 330 Q 410 350 390 350 L 350 350 Q 330 350 330 390 Q 330 350 310 350 L 270 350 ";
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 10, 0.1, 0, 0);
+}
+.searchBar{
+    -fx-border-color: white;
+    -fx-border-radius: 20px;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+.popupwindowBack{
+    -fx-shape: "M 240 380 L 200 380 Q 160 380 160 340 L 160 280 Q 160 240 200 240 L 400 240 Q 440 240 440 280 L 440 340 Q 440 380 400 380 L 360 380 Q 340 400 400 440 Q 300 380 320 380 L 240 380 ";
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 10, 0.1, 0, 0);
 }

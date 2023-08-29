@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="875.0" prefWidth="1478.0" stylesheets="@../style/StudentManageFormStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.StudentManageFormController">
@@ -14,7 +18,7 @@
             <Image url="@../img/dashboard.png" />
          </image>
       </ImageView>
-      <Pane layoutX="76.0" layoutY="268.0" prefHeight="200.0" prefWidth="200.0" styleClass="countBox">
+      <Pane layoutX="85.0" layoutY="241.0" onMouseEntered="#countBoxMouseEntered" onMouseExited="#countBoxMouseExit" prefHeight="200.0" prefWidth="200.0" styleClass="countBox">
          <children>
             <Label layoutX="37.0" layoutY="14.0" prefHeight="54.0" prefWidth="126.0" text="All Student" textFill="WHITE">
                <font>
@@ -27,7 +31,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="76.0" layoutY="527.0" prefHeight="200.0" prefWidth="200.0" styleClass="countBox">
+      <Pane layoutX="85.0" layoutY="512.0" onMouseEntered="#countBoxMouseEntered" onMouseExited="#countBoxMouseExit" prefHeight="200.0" prefWidth="200.0" styleClass="countBox">
          <children>
             <Label layoutX="22.0" layoutY="14.0" prefHeight="54.0" prefWidth="156.0" text="Today Student" textFill="WHITE">
                <font>
@@ -40,5 +44,94 @@
                </font>
             </Label>
          </children></Pane>
+      <Pane layoutX="335.0" layoutY="214.0" prefHeight="54.0" prefWidth="1085.0" styleClass="tableColum">
+         <children>
+            <Label layoutX="34.0" layoutY="13.0" prefHeight="30.0" prefWidth="27.0" text="Id" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="135.0" layoutY="12.0" prefHeight="30.0" prefWidth="64.0" text="Name" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="273.0" layoutY="14.0" prefHeight="30.0" prefWidth="93.0" text="Birthday" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="441.0" layoutY="14.0" prefHeight="30.0" prefWidth="83.0" text="Gender" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="594.0" layoutY="13.0" prefHeight="30.0" prefWidth="92.0" text="Address" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="755.0" layoutY="14.0" prefHeight="30.0" prefWidth="129.0" text="Contact No." textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="954.0" layoutY="12.0" prefHeight="30.0" prefWidth="76.0" text="Option" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ScrollPane layoutX="335.0" layoutY="289.0" prefHeight="446.0" prefWidth="1085.0" style="-fx-background-color: #33383C;">
+         <content>
+            <VBox prefHeight="445.0" prefWidth="1065.0" style="-fx-background-color: #33383C;" />
+         </content>
+      </ScrollPane>
+      <JFXButton layoutX="1347.0" layoutY="128.0" prefHeight="50.0" prefWidth="50.0" styleClass="addBtn" text=" " />
+      <ImageView fitHeight="47.0" fitWidth="54.0" layoutX="1349.0" layoutY="130.0" onMouseEntered="#btnAddOnMouseEntered" onMouseExited="#btnAddOnMouseExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon/icons8-add-100.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="newStudentId" layoutX="1313.0" layoutY="81.0" opacity="0.7" prefHeight="39.0" prefWidth="120.0" styleClass="popupwindow" visible="false">
+         <children>
+            <Label layoutX="6.0" layoutY="3.0" prefHeight="17.0" prefWidth="118.0" text="Add New Student">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <JFXTextField alignment="CENTER" focusColor="WHITE" layoutX="508.0" layoutY="14.0" prefHeight="39.0" prefWidth="463.0" promptText="Search Id or Name" styleClass="searchBar" unFocusColor="WHITE">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="1269.0" layoutY="128.0" prefHeight="50.0" prefWidth="50.0" styleClass="addBtn" text=" " />
+      <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="1272.0" layoutY="131.0" onMouseEntered="#backOnMouseEntered" onMouseExited="#backOnMouseExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon/icons8-home-64.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="bachId" layoutX="1228.0" layoutY="103.0" opacity="0.7" prefHeight="35.0" prefWidth="50.0" styleClass="popupwindowBack" visible="false">
+         <children>
+            <Label layoutX="6.0" layoutY="3.0" prefHeight="17.0" prefWidth="39.0" text="Home">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="85.0" layoutY="34.0" prefHeight="30.0" prefWidth="176.0" text="Manage Student" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="63.0" fitWidth="64.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon/icons8-employee-100.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
