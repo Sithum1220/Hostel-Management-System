@@ -1,7 +1,7 @@
 package lk.ijse.hostel.controller;
 
-import com.jfoenix.controls.JFXButton;
 import javafx.animation.ScaleTransition;
+import javafx.event.ActionEvent;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -11,6 +11,8 @@ import javafx.util.Duration;
 public class StudentManageFormController {
     public Pane newStudentId;
     public Pane bachId;
+    public Pane addUpdatePane;
+    public Pane hidePane;
 
     public void btnAddOnMouseEntered(MouseEvent event) {
         newStudentId.setVisible(true);
@@ -38,7 +40,7 @@ public class StudentManageFormController {
         }
     }
 
-    public void countBoxMouseExit (MouseEvent event) {
+    public void countBoxMouseExit(MouseEvent event) {
         if (event.getSource() instanceof Pane) {
             Pane icon = (Pane) event.getSource();
             ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), icon);
@@ -55,5 +57,20 @@ public class StudentManageFormController {
 
     public void backOnMouseExit(MouseEvent event) {
         bachId.setVisible(false);
+    }
+
+    public void doneOnAction(ActionEvent actionEvent) {
+        addUpdatePane.setVisible(false);
+        hidePane.setVisible(false);
+    }
+
+    public void addOnMouseClick(MouseEvent event) {
+        addUpdatePane.setVisible(true);
+        hidePane.setVisible(true);
+    }
+
+    public void hideOnMouseClick(MouseEvent event) {
+        addUpdatePane.setVisible(false);
+        hidePane.setVisible(false);
     }
 }

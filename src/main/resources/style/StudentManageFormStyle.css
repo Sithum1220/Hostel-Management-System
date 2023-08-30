@@ -57,3 +57,30 @@
     -fx-background-color: white;
     -fx-effect: dropshadow(gaussian, #FFFFFF, 10, 0.1, 0, 0);
 }
+.addPane{
+    -fx-background-color: #33383C;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 10, 0.1, 0, 0);
+    -fx-background-radius: 30px;
+}
+.addText{
+    -fx-border-color: #FFFF;
+    -fx-border-radius: 5;
+    -fx-prompt-text-fill: White;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+}
+.addText .cell:selected{
+    -fx-text-fill: white;
+}
+.actionBtn {
+    -fx-background-color: #0e78af;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 10, 0.1, 0, 0);
+    -fx-background-radius: 10px;
+}
+
+.actionBtn:hover{
+    -fx-background-color: #236DD8;
+    -fx-effect: dropshadow(gaussian, #FFFFFF, 30, 0.1, 0, 0);
+}

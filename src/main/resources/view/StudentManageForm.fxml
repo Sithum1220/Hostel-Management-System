@@ -2,6 +2,8 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -89,7 +91,7 @@
          </content>
       </ScrollPane>
       <JFXButton layoutX="1347.0" layoutY="128.0" prefHeight="50.0" prefWidth="50.0" styleClass="addBtn" text=" " />
-      <ImageView fitHeight="47.0" fitWidth="54.0" layoutX="1349.0" layoutY="130.0" onMouseEntered="#btnAddOnMouseEntered" onMouseExited="#btnAddOnMouseExit" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="47.0" fitWidth="54.0" layoutX="1349.0" layoutY="130.0" onMouseClicked="#addOnMouseClick" onMouseEntered="#btnAddOnMouseEntered" onMouseExited="#btnAddOnMouseExit" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/icon/icons8-add-100.png" />
          </image>
@@ -133,5 +135,23 @@
             <Image url="@../img/icon/icons8-employee-100.png" />
          </image>
       </ImageView>
+      <Pane fx:id="addUpdatePane" layoutX="898.0" layoutY="193.0" prefHeight="176.0" prefWidth="531.0" styleClass="addPane" visible="false">
+         <children>
+            <JFXTextField layoutX="12.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="First Name" styleClass="addText" />
+            <JFXTextField layoutX="186.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="Last Name" styleClass="addText" />
+            <JFXTextField layoutX="361.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="City" styleClass="addText" />
+            <JFXTextField layoutX="14.0" layoutY="119.0" prefHeight="25.0" prefWidth="156.0" promptText="Street" styleClass="addText" />
+            <JFXTextField layoutX="14.0" layoutY="71.0" prefHeight="25.0" prefWidth="156.0" promptText="Lane" styleClass="addText" />
+            <JFXTextField layoutX="186.0" layoutY="71.0" prefHeight="25.0" prefWidth="156.0" promptText="Contact Number" styleClass="addText" />
+            <ComboBox layoutX="361.0" layoutY="70.0" prefHeight="27.0" prefWidth="156.0" promptText="Gender" style="-fx-background-color: transparent;" styleClass="addText" />
+            <DatePicker layoutX="186.0" layoutY="118.0" prefHeight="27.0" prefWidth="156.0" style="-fx-background-color: transparent;" styleClass="addText" />
+            <JFXButton layoutX="401.0" layoutY="120.0" onAction="#doneOnAction" prefHeight="35.0" prefWidth="92.0" styleClass="actionBtn" stylesheets="@../style/StudentManageFormStyle.css" text="Done" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane fx:id="hidePane" layoutX="1347.0" layoutY="129.0" onMouseClicked="#hideOnMouseClick" prefHeight="50.0" prefWidth="50.0" visible="false" />
    </children>
 </AnchorPane>
