@@ -11,18 +11,15 @@ import lk.ijse.hostel.controller.utill.Navigation;
 
 import java.io.IOException;
 
-public class StudentManageFormController {
-    public Pane newStudentId;
+public class ResuvationFormController {
     public Pane bachId;
     public Pane addUpdatePane;
     public Pane hidePane;
+    public Pane newReservationId;
 
-    public void btnAddOnMouseEntered(MouseEvent event) {
-        newStudentId.setVisible(true);
-    }
-
-    public void btnAddOnMouseExit(MouseEvent event) {
-        newStudentId.setVisible(false);
+    public void hideOnMouseClick(MouseEvent event) {
+        addUpdatePane.setVisible(false);
+        hidePane.setVisible(false);
     }
 
     public void countBoxMouseEntered(MouseEvent event) {
@@ -54,12 +51,29 @@ public class StudentManageFormController {
         }
     }
 
+    public void addOnMouseClick(MouseEvent event) {
+        addUpdatePane.setVisible(true);
+        hidePane.setVisible(true);
+    }
+
+    public void btnAddOnMouseEntered(MouseEvent event) {
+        newReservationId.setVisible(true);
+
+    }
+
+    public void btnAddOnMouseExit(MouseEvent event) {
+        newReservationId.setVisible(false);
+
+    }
+
     public void backOnMouseEntered(MouseEvent event) {
         bachId.setVisible(true);
+
     }
 
     public void backOnMouseExit(MouseEvent event) {
         bachId.setVisible(false);
+
     }
 
     public void doneOnAction(ActionEvent actionEvent) {
@@ -67,17 +81,8 @@ public class StudentManageFormController {
         hidePane.setVisible(false);
     }
 
-    public void addOnMouseClick(MouseEvent event) {
-        addUpdatePane.setVisible(true);
-        hidePane.setVisible(true);
-    }
-
-    public void hideOnMouseClick(MouseEvent event) {
-        addUpdatePane.setVisible(false);
-        hidePane.setVisible(false);
-    }
-
     public void homeOnmouseClick(MouseEvent event) throws IOException {
         Navigation.switchNavigation("DashBoardForm.fxml",event);
+
     }
 }

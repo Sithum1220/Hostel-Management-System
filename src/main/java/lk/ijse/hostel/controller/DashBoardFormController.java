@@ -2,11 +2,15 @@ package lk.ijse.hostel.controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.ScaleTransition;
+import javafx.event.ActionEvent;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import lk.ijse.hostel.controller.utill.Navigation;
+
+import java.io.IOException;
 
 public class DashBoardFormController {
     public void btnMouseEntered(MouseEvent event) {
@@ -38,5 +42,17 @@ public class DashBoardFormController {
 
             icon.setEffect(null);
         }
+    }
+
+    public void btnStudentOnAction(ActionEvent actionEvent) throws IOException {
+        Navigation.switchNavigation("StudentManageForm.fxml",actionEvent);
+    }
+
+    public void btnRoomsOnAction(ActionEvent actionEvent) throws IOException {
+        Navigation.switchNavigation("RoomsMnageForm.fxml",actionEvent);
+    }
+
+    public void btnResuvationOnAction(ActionEvent actionEvent) throws IOException {
+        Navigation.switchNavigation("ResuvationForm.fxml",actionEvent);
     }
 }

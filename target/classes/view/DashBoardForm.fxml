@@ -45,9 +45,9 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <JFXButton layoutY="60.0" onMouseEntered="#btnMouseEntered" onMouseExited="#btnMouseExit" prefHeight="150.0" prefWidth="244.0" styleClass="actionBtn" text=" " />
-      <JFXButton layoutY="241.0" onMouseEntered="#btnMouseEntered" onMouseExited="#btnMouseExit" prefHeight="150.0" prefWidth="244.0" styleClass="actionBtn" text=" " />
-      <JFXButton layoutY="426.0" onMouseEntered="#btnMouseEntered" onMouseExited="#btnMouseExit" prefHeight="150.0" prefWidth="244.0" styleClass="actionBtn" text=" " />
+      <JFXButton layoutY="60.0" onAction="#btnStudentOnAction" onMouseEntered="#btnMouseEntered" onMouseExited="#btnMouseExit" prefHeight="150.0" prefWidth="244.0" styleClass="actionBtn" text=" " />
+      <JFXButton layoutY="241.0" onAction="#btnRoomsOnAction" onMouseEntered="#btnMouseEntered" onMouseExited="#btnMouseExit" prefHeight="150.0" prefWidth="244.0" styleClass="actionBtn" text=" " />
+      <JFXButton layoutY="426.0" onAction="#btnResuvationOnAction" onMouseEntered="#btnMouseEntered" onMouseExited="#btnMouseExit" prefHeight="150.0" prefWidth="244.0" styleClass="actionBtn" text=" " />
       <Label alignment="CENTER" layoutX="29.0" layoutY="679.0" opacity="0.64" prefHeight="56.0" prefWidth="199.0" text="All Rooms" textFill="WHITE">
          <font>
             <Font size="45.0" />

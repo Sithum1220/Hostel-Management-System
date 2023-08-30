@@ -111,7 +111,7 @@
          </font>
       </JFXTextField>
       <JFXButton layoutX="1269.0" layoutY="128.0" prefHeight="50.0" prefWidth="50.0" styleClass="addBtn" text=" " />
-      <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="1272.0" layoutY="131.0" onMouseEntered="#backOnMouseEntered" onMouseExited="#backOnMouseExit" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="1272.0" layoutY="131.0" onMouseClicked="#homeOnmouseClick" onMouseEntered="#backOnMouseEntered" onMouseExited="#backOnMouseExit" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/icon/icons8-home-64.png" />
          </image>
