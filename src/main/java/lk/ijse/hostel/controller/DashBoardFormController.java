@@ -4,11 +4,10 @@ import com.jfoenix.controls.JFXButton;
 import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
-import lk.ijse.hostel.controller.utill.Navigation;
+import lk.ijse.hostel.utill.Navigation;
 
 import java.io.IOException;
 

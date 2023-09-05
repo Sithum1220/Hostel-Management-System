@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="727.0" stylesheets="@../style/LoginPageStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.LoginFormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="727.0" stylesheets="@../style/LoginPageStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.LoginFormController">
    <children>
-      <ImageView fitHeight="440.0" fitWidth="740.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="446.0" fitWidth="733.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/Hostel.png" />
          </image>
@@ -25,7 +25,12 @@
             </Label>
             <JFXTextField alignment="CENTER" layoutX="39.0" layoutY="137.0" prefHeight="19.0" prefWidth="212.0" promptText="User Name" />
             <JFXTextField alignment="CENTER" layoutX="39.0" layoutY="200.0" prefHeight="29.0" prefWidth="212.0" promptText="Password" />
-            <JFXButton layoutX="95.0" layoutY="276.0" onAction="#btnLoginOnAction" prefHeight="39.0" prefWidth="100.0" styleClass="login-button" text="Login" />
+            <JFXButton layoutX="95.0" layoutY="283.0" onAction="#btnLoginOnAction" prefHeight="39.0" prefWidth="100.0" styleClass="login-button" text="Login" />
+            <Label layoutX="40.0" layoutY="240.0" onMouseClicked="#createAccountOnMouseClick" opacity="0.69" prefHeight="21.0" prefWidth="85.0" styleClass="createAccountText" text="Create Account" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Label layoutX="29.0" layoutY="363.0" opacity="0.59" prefHeight="39.0" prefWidth="100.0" text="126, Colombo" textFill="WHITE">
@@ -43,5 +48,18 @@
             <Font name="Arial" size="23.0" />
          </font>
       </Label>
+      <Pane fx:id="signUpPane" layoutX="414.0" layoutY="38.0" prefHeight="364.0" prefWidth="289.0" styleClass="loginWindow" visible="false">
+         <children>
+            <Label layoutX="54.0" layoutY="48.0" opacity="0.76" prefHeight="55.0" prefWidth="180.0" text="Sing Up" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="47.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="singUpUserName" alignment="CENTER" layoutX="39.0" layoutY="137.0" prefHeight="19.0" prefWidth="212.0" promptText="User Name" />
+            <JFXTextField fx:id="singUpPassword" alignment="CENTER" layoutX="38.0" layoutY="191.0" prefHeight="29.0" prefWidth="212.0" promptText="Password" />
+            <JFXButton layoutX="94.0" layoutY="298.0" onAction="#btnSignUpOnAction" prefHeight="39.0" prefWidth="100.0" styleClass="login-button" text="Sing Up" />
+            <JFXTextField fx:id="singUpConfirmPassword" alignment="CENTER" layoutX="36.0" layoutY="244.0" prefHeight="29.0" prefWidth="212.0" promptText="Confirm Password" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -7,7 +7,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
-import lk.ijse.hostel.controller.utill.Navigation;
+import lk.ijse.hostel.utill.Navigation;
 
 import java.io.IOException;
 

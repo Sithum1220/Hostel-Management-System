@@ -29,5 +29,11 @@
     -fx-text-fill:#274F89 ;
     -fx-font-weight: bold;
     -fx-effect: dropshadow( gaussian , #FFFFFF,40,0.1,0,0);
-
+}
+.createAccountText{
+    -fx-text-fill: #d5d5d5;
+}
+.createAccountText:hover{
+    -fx-effect: dropshadow( gaussian , #FFFFFF,40,0.1,0,0);
+    -fx-text-fill: white;
 }

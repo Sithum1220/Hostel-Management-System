@@ -1,4 +1,4 @@
-package lk.ijse.hostel.controller.utill;
+package lk.ijse.hostel.utill;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
