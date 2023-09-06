@@ -101,4 +101,45 @@ public class RoomServiceImpl implements RoomService {
             return null;
         }
     }
+
+    @Override
+    public boolean update(RoomDTO roomDTO) {
+        session = SessionFactoryConfig.getInstance()
+                .getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            roomRepository.setSession(session);
+            roomRepository.update(roomDTO.toEntity());
+            transaction.commit();
+            session.close();
+
+            return true;
+        } catch (Exception ex) {
+            transaction.rollback();
+            session.close();
+            ex.printStackTrace();
+
+            return false;
+        }
+    }
+
+    @Override
+    public boolean delete(RoomDTO roomDTO) {
+        session = SessionFactoryConfig.getInstance()
+                .getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            roomRepository.setSession(session);
+            roomRepository.delete(roomDTO.toEntity());
+            transaction.commit();
+            session.close();
+            return true;
+        } catch (Exception ex) {
+            transaction.rollback();
+            session.close();
+            ex.printStackTrace();
+
+            return false;
+        }
+    }
 }

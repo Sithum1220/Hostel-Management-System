@@ -1,7 +1,6 @@
 package lk.ijse.hostel.repository.custom.impl;
 
 import lk.ijse.hostel.entity.Room;
-import lk.ijse.hostel.entity.Student;
 import lk.ijse.hostel.repository.custom.RoomRepository;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -19,7 +18,7 @@ public class RoomRepositoryImpl implements RoomRepository {
 
     @Override
     public void update(Room room) {
-
+        session.update(room);
     }
 
     @Override
@@ -29,7 +28,7 @@ public class RoomRepositoryImpl implements RoomRepository {
 
     @Override
     public void delete(Room Objec) {
-
+        session.delete(Objec);
     }
 
     @Override

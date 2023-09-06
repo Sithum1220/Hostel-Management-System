@@ -16,6 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import lk.ijse.hostel.dto.RoomDTO;
+import lk.ijse.hostel.dto.StudentDTO;
 import lk.ijse.hostel.service.ServiceFactory;
 import lk.ijse.hostel.service.custom.RoomService;
 import lk.ijse.hostel.utill.Navigation;
@@ -26,6 +27,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class RoomsManageFormController implements Initializable {
+    private static RoomsManageFormController manageFormController;
     public Pane bachId;
     public Pane addUpdatePane;
     public Pane hidePane;
@@ -36,9 +38,18 @@ public class RoomsManageFormController implements Initializable {
     public JFXTextField roomQTY;
     public JFXTextField roomType;
     public ScrollPane scrollPane;
-
     RoomService roomService = ServiceFactory.getInstance()
             .getServiceFactory(ServiceFactory.ServiceType.ROOM_SERVICE);
+
+    private String updateId;
+
+    public RoomsManageFormController() {
+        manageFormController = this;
+    }
+
+    public static RoomsManageFormController getInstance() {
+        return manageFormController;
+    }
 
     public void hideOnMouseClick(MouseEvent event) {
         addUpdatePane.setVisible(false);
@@ -66,32 +77,21 @@ public class RoomsManageFormController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Not Saved!").show();
 
             }
+        } else if (btnCrud.getText().equals("Update")) {
+            boolean update = roomService.update(new RoomDTO(
+                    updateId,
+                    roomType.getText(),
+                    keyMoney.getText(),
+                    Integer.parseInt(roomQTY.getText())
+            ));
+
+            if (update) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Room Updated!").showAndWait();
+                loadAllIds();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Room Not Updated!").show();
+            }
         }
-//        else if (btnCrud.getText().equals("Update")) {
-//            Name name = new Name();
-//            name.setFirst_name(first_name.getText());
-//            name.setLast_name(last_name.getText());
-//
-//            Address address = new Address();
-//            address.setStreet(street.getText());
-//            address.setCity(city.getText());
-//            address.setHouseNo(lane.getText());
-//            boolean update = studentService.update(new StudentDTO(
-//                    updateId,
-//                    name,
-//                    address,
-//                    mobileNo.getText(),
-//                    dob.getValue(),
-//                    getGender()
-//            ));
-//
-//            if (update) {
-//                new Alert(Alert.AlertType.CONFIRMATION, "Student Updated!").showAndWait();
-//                loadAllIds();
-//            } else {
-//                new Alert(Alert.AlertType.ERROR, "Student Not Updated!").show();
-//            }
-//        }
     }
 
     public void backOnMouseExit(MouseEvent event) {
@@ -148,7 +148,7 @@ public class RoomsManageFormController implements Initializable {
     }
 
     public void homeOnmouseClick(MouseEvent event) throws IOException {
-        Navigation.switchNavigation("DashBoardForm.fxml",event);
+        Navigation.switchNavigation("DashBoardForm.fxml", event);
 
     }
 
@@ -183,4 +183,15 @@ public class RoomsManageFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadAllIds();
     }
+    public void update(String ids) {
+        updateId = ids;
+        addUpdatePane.setVisible(true);
+        hidePane.setVisible(true);
+        RoomDTO roomDTO = roomService.getRoom(ids);
+        roomType.setText(roomDTO.getType());
+        roomQTY.setText(String.valueOf(roomDTO.getQty()));
+        keyMoney.setText(roomDTO.getKeyMoney());
+        btnCrud.setText("Update");
+    }
+
 }

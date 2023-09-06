@@ -12,4 +12,8 @@ public interface RoomService extends SuperService {
     String newId();
     RoomDTO getRoom(String id);
 
+    boolean update(RoomDTO roomDTO);
+
+    boolean delete(RoomDTO roomDTO);
+
 }
