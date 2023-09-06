@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="45.0" prefWidth="996.0" style="-fx-background-color: #2B2B2B;" stylesheets="@../style/StudentManageFormStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.RoomsManageBarFormController">
+   <children>
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="996.0" spacing="15.0">
+         <children>
+            <Text fx:id="id" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="169.21630859375">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Text>
+            <Text fx:id="name" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type" wrappingWidth="255.21630859375">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Text>
+            <Text fx:id="address" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Key Money" wrappingWidth="243.21630859375">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Text>
+            <Text fx:id="dob" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" wrappingWidth="196.21630859375">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="15.0" fitWidth="29.0" onMouseClicked="#updateOnMouseClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icon/0011.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="15.0" fitWidth="29.0" onMouseClicked="#deleteOnMouseClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icon/0012.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

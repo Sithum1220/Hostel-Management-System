@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="45.0" prefWidth="996.0" style="-fx-background-color: #2B2B2B;" stylesheets="@../style/StudentManageFormStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.ResuvationAddManageBarFormController">
+   <children>
+      <AnchorPane prefHeight="45.0" prefWidth="996.0" style="-fx-background-color: #2B2B2B;" stylesheets="@../style/StudentManageFormStyle.css">
+         <children>
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="996.0" spacing="15.0">
+               <children>
+                  <Text fx:id="id" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="155.21630859375">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="name" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type" wrappingWidth="209.21630859375">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="address" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Id:Student Name" wrappingWidth="296.21630859375">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="dob" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="167.21630859375">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="dob1" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="103.21630859375">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
