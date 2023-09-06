@@ -1,8 +1,7 @@
 package lk.ijse.hostel.service.custom.impl;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import lk.ijse.hostel.dto.StudentDTO;
+import lk.ijse.hostel.entity.Student;
 import lk.ijse.hostel.repository.RepositoryFactory;
 import lk.ijse.hostel.repository.custom.StudentRepository;
 import lk.ijse.hostel.service.custom.StudentService;
@@ -19,20 +18,6 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public String saveStudent(StudentDTO studentDTO) {
-//        session = SessionFactoryConfig.getInstance().getSession();
-//        Transaction transaction = session.beginTransaction();
-//        try {
-//            studentRepository.setSession(session);
-//            String save = studentRepository.save(studentDTO.toEntity());
-//            transaction.commit();
-//            session.close();
-//            return save;
-//
-//        } catch (Exception e) {
-//            transaction.rollback();
-//            session.close();
-//            return null;
-//        }
 
         session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
@@ -52,28 +37,27 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public ObservableList<String> getAllStudentId() {
+    public List<String> getAllStudentId() {
         Session session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-
-        ObservableList<String> idList = FXCollections.observableArrayList();
         studentRepository.setSession(session);
-        List<String> list = studentRepository.getAllId();
-        for (String id : list) {
-            idList.add(id);
+        try {
+            transaction.commit();
+            return studentRepository.getAllId();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
         }
-
-        transaction.commit();
-        session.close();
-        return idList;
+        return null;
     }
 
     @Override
-    public String newId(){
+    public String newId() {
         Session session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
         studentRepository.setSession(session);
-       List<String> allId = studentRepository.getAllId();
+        List<String> allId = studentRepository.getAllId();
 
         String lastId = null;
         for (int i = 0; i < allId.size(); i++) {
@@ -91,6 +75,81 @@ public class StudentServiceImpl implements StudentService {
         } catch (Exception e) {
             session.close();
             return "S001";
+        }
+
+    }
+
+    @Override
+    public StudentDTO getStudent(String id) {
+        session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        studentRepository.setSession(session);
+        Student student;
+        try {
+            student = studentRepository.get(id);
+            transaction.commit();
+            session.close();
+            return new StudentDTO(
+                    student.getStudentId(),
+                    student.getName(),
+                    student.getAddress(),
+                    student.getContactNo(),
+                    student.getDob(),
+                    student.getGender()
+            );
+        } catch (Exception e) {
+            transaction.rollback();
+            session.close();
+            return null;
+        }
+    }
+
+    @Override
+    public List<String> getSearchStudentId() {
+//        session = SessionFactoryConfig.getInstance().getSession();
+//        Transaction transaction = session.beginTransaction();
+//        studentRepository.setSession(session);
+        return null;
+    }
+
+    @Override
+    public boolean update(StudentDTO studentDTO) {
+        session = SessionFactoryConfig.getInstance()
+                .getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            studentRepository.setSession(session);
+            studentRepository.update(studentDTO.toEntity());
+            transaction.commit();
+            session.close();
+
+            return true;
+        } catch (Exception ex) {
+            transaction.rollback();
+            session.close();
+            ex.printStackTrace();
+
+            return false;
+        }
+    }
+
+    @Override
+    public boolean delete(StudentDTO studentDTO) {
+        session = SessionFactoryConfig.getInstance()
+                .getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            studentRepository.setSession(session);
+            studentRepository.delete(studentDTO.toEntity());
+            transaction.commit();
+            session.close();
+            return true;
+        } catch (Exception ex) {
+            transaction.rollback();
+            session.close();
+            ex.printStackTrace();
+
+            return false;
         }
 
     }

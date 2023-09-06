@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface StudentRepository extends CrudRepository<Student, String> {
 
-
+    List<String> searchStudent();
 }

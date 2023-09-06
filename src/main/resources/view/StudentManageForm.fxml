@@ -63,7 +63,7 @@
             </Label>
          </children>
       </Pane>
-      <JFXTextField alignment="CENTER" focusColor="WHITE" layoutX="508.0" layoutY="14.0" prefHeight="39.0" prefWidth="463.0" promptText="Search Id or Name" styleClass="searchBar" unFocusColor="WHITE">
+      <JFXTextField fx:id="searchId" alignment="CENTER" focusColor="WHITE" layoutX="508.0" layoutY="14.0" onKeyReleased="#searchOnKeyRelease" prefHeight="39.0" prefWidth="463.0" promptText="Search Id or Name" styleClass="searchBar" unFocusColor="WHITE">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
@@ -94,67 +94,69 @@
          </image>
       </ImageView>
       <Pane fx:id="hidePane" layoutX="1347.0" layoutY="129.0" onMouseClicked="#hideOnMouseClick" prefHeight="50.0" prefWidth="50.0" visible="false" />
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-      <AnchorPane layoutX="337.0" layoutY="225.0" prefHeight="538.0" prefWidth="1084.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+      <AnchorPane layoutX="337.0" layoutY="225.0" prefHeight="538.0" prefWidth="1084.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 20;">
          <children>
-            <Line endX="907.606201171875" layoutX="133.0" layoutY="53.0" opacity="0.4" startX="-97.48080444335938" />
+            <Line endX="907.606201171875" layoutX="133.0" layoutY="53.0" opacity="0.4" startX="-97.48080444335938" stroke="WHITE" />
             <HBox alignment="CENTER_LEFT" layoutX="48.0" layoutY="24.0" prefHeight="30.0" prefWidth="989.0" spacing="115.0">
                <children>
-                  <Label opacity="0.74" text="ID">
+                  <Label opacity="0.74" text="ID" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label opacity="0.74" text="Name">
+                  <Label opacity="0.74" text="Name" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label opacity="0.74" text="Address">
+                  <Label opacity="0.74" text="Address" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label opacity="0.74" text="Birthday">
+                  <Label opacity="0.74" text="Birthday" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label opacity="0.74" text="Mobile">
+                  <Label opacity="0.74" text="Mobile" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label opacity="0.74" text="Gender">
+                  <Label opacity="0.74" text="Gender" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label opacity="0.74" text="Action">
+                  <Label opacity="0.74" text="Action" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <ScrollPane fx:id="scrollPane" layoutX="47.0" layoutY="54.0" prefHeight="463.0" prefWidth="1014.0" style="-fx-background-color: white;">
+            <ScrollPane fx:id="scrollPane" layoutX="47.0" layoutY="54.0" prefHeight="463.0" prefWidth="1014.0" style="-fx-background-color: #2B2B2Be;">
                <content>
-                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="996.0" style="-fx-background-color: white;" />
+                  <VBox fx:id="vBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="996.0" style="-fx-background-color: #2B2B2B;" />
                </content>
             </ScrollPane>
-            <AnchorPane layoutX="1044.0" layoutY="55.0" prefHeight="463.0" prefWidth="20.0" style="-fx-background-color: white;" />
+            <AnchorPane layoutX="1042.0" layoutY="55.0" prefHeight="461.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
+            <AnchorPane layoutX="44.0" layoutY="516.0" prefHeight="8.0" prefWidth="1021.0" style="-fx-background-color: #2B2B2B;" />
+            <AnchorPane layoutX="28.0" layoutY="55.0" prefHeight="461.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
+            <AnchorPane layoutX="42.0" layoutY="54.0" prefHeight="16.0" prefWidth="1021.0" style="-fx-background-color: #2B2B2B;" />
          </children>
       </AnchorPane>
       <Pane fx:id="addUpdatePane" layoutX="889.0" layoutY="191.0" prefHeight="176.0" prefWidth="531.0" styleClass="addPane" visible="false">
          <children>
             <JFXTextField fx:id="first_name" layoutX="12.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="First Name" styleClass="addText" />
             <JFXTextField fx:id="last_name" layoutX="186.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="Last Name" styleClass="addText" />
-            <JFXTextField fx:id="city" layoutX="361.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="City" styleClass="addText" />
+            <JFXTextField fx:id="city" layoutX="353.0" layoutY="71.0" prefHeight="25.0" prefWidth="156.0" promptText="City" styleClass="addText" />
             <JFXTextField fx:id="street" layoutX="188.0" layoutY="71.0" prefHeight="25.0" prefWidth="156.0" promptText="Street" styleClass="addText" />
             <JFXTextField fx:id="lane" layoutX="14.0" layoutY="71.0" prefHeight="25.0" prefWidth="156.0" promptText="House No" styleClass="addText" />
-            <JFXTextField fx:id="mobileNo" layoutX="361.0" layoutY="71.0" prefHeight="25.0" prefWidth="156.0" promptText="Contact Number" styleClass="addText" />
+            <JFXTextField fx:id="mobileNo" layoutX="353.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="Contact Number" styleClass="addText" />
             <DatePicker fx:id="dob" layoutX="186.0" layoutY="118.0" prefHeight="27.0" prefWidth="156.0" style="-fx-background-color: transparent;" styleClass="addText" />
-            <JFXButton layoutX="401.0" layoutY="120.0" onAction="#doneOnAction" prefHeight="35.0" prefWidth="92.0" styleClass="actionBtn" stylesheets="@../style/StudentManageFormStyle.css" text="Done" textFill="WHITE">
+            <JFXButton fx:id="btnCrud" layoutX="401.0" layoutY="120.0" onAction="#doneOnAction" prefHeight="35.0" prefWidth="92.0" styleClass="actionBtn" stylesheets="@../style/StudentManageFormStyle.css" text="Save" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="17.0" />
                </font>
