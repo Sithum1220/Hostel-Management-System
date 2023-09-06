@@ -98,22 +98,10 @@
             <Image url="@../img/icon/icons8-bed-100.png" />
          </image>
       </ImageView>
-      <Pane fx:id="addUpdatePane" layoutX="1073.0" layoutY="197.0" prefHeight="132.0" prefWidth="360.0" styleClass="addPane" visible="false">
-         <children>
-            <JFXTextField layoutX="12.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="Key Money" styleClass="addText" />
-            <JFXTextField layoutX="186.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="Room QTY" styleClass="addText" />
-            <JFXTextField layoutX="12.0" layoutY="86.0" prefHeight="25.0" prefWidth="156.0" promptText="Room Type" styleClass="addText" />
-            <JFXButton layoutX="250.0" layoutY="81.0" onAction="#doneOnAction" prefHeight="35.0" prefWidth="92.0" styleClass="actionBtn" stylesheets="@../style/StudentManageFormStyle.css" text="Done" textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold" size="17.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </Pane>
       <Pane fx:id="hidePane" layoutX="1347.0" layoutY="129.0" onMouseClicked="#hideOnMouseClick" prefHeight="50.0" prefWidth="50.0" visible="false" />
-      <AnchorPane layoutX="347.0" layoutY="208.0" prefHeight="538.0" prefWidth="1084.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 20;">
+      <AnchorPane layoutX="347.0" layoutY="242.0" prefHeight="538.0" prefWidth="1089.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 20;">
          <children>
-            <Line endX="907.606201171875" layoutX="133.0" layoutY="53.0" opacity="0.4" startX="-97.48080444335938" stroke="WHITE" />
+            <Line endX="912.0" layoutX="133.0" layoutY="53.0" opacity="0.4" startX="-98.0" stroke="WHITE" />
             <HBox alignment="CENTER_LEFT" layoutX="48.0" layoutY="24.0" prefHeight="30.0" prefWidth="989.0" spacing="175.0">
                <children>
                   <Label opacity="0.74" text="ID" textFill="WHITE">
@@ -154,5 +142,17 @@
             <AnchorPane layoutX="42.0" layoutY="54.0" prefHeight="16.0" prefWidth="1021.0" style="-fx-background-color: #2B2B2B;" />
          </children>
       </AnchorPane>
+      <Pane fx:id="addUpdatePane" layoutX="1054.0" layoutY="192.0" prefHeight="132.0" prefWidth="360.0" styleClass="addPane" visible="false">
+         <children>
+            <JFXTextField fx:id="keyMoney" layoutX="12.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="Key Money" styleClass="addText" />
+            <JFXTextField fx:id="roomQTY" layoutX="186.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="Room QTY" styleClass="addText" />
+            <JFXTextField fx:id="roomType" layoutX="12.0" layoutY="86.0" prefHeight="25.0" prefWidth="156.0" promptText="Room Type" styleClass="addText" />
+            <JFXButton fx:id="btnCrud" layoutX="250.0" layoutY="81.0" onAction="#doneOnAction" prefHeight="35.0" prefWidth="92.0" styleClass="actionBtn" stylesheets="@../style/StudentManageFormStyle.css" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

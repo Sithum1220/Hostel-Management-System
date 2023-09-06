@@ -1,5 +1,6 @@
 package lk.ijse.hostel.service;
 
+import lk.ijse.hostel.service.custom.impl.RoomServiceImpl;
 import lk.ijse.hostel.service.custom.impl.StudentServiceImpl;
 
 public class ServiceFactory {
@@ -12,13 +13,15 @@ public class ServiceFactory {
     }
 
     public enum ServiceType{
-        STUDENT_SERVICE
+        STUDENT_SERVICE,ROOM_SERVICE
     }
 
     public <T extends SuperService>T getServiceFactory(ServiceType serviceType){
         switch (serviceType){
             case STUDENT_SERVICE:
                 return (T) new StudentServiceImpl();
+            case ROOM_SERVICE:
+                return (T) new RoomServiceImpl();
             default:
                 return null;
         }

@@ -16,17 +16,17 @@
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Text>
-            <Text fx:id="name" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type" wrappingWidth="255.21630859375">
+            <Text fx:id="roomType" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type" wrappingWidth="255.21630859375">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Text>
-            <Text fx:id="address" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Key Money" wrappingWidth="243.21630859375">
+            <Text fx:id="keyMoney" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Key Money" wrappingWidth="243.21630859375">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Text>
-            <Text fx:id="dob" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" wrappingWidth="196.21630859375">
+            <Text fx:id="qty" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" wrappingWidth="196.21630859375">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
