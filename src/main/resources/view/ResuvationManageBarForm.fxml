@@ -14,22 +14,22 @@
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Text>
-            <Text fx:id="name" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type" wrappingWidth="209.21630859375">
+            <Text fx:id="roomID" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type" wrappingWidth="209.21630859375">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Text>
-            <Text fx:id="address" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Id:Student Name" wrappingWidth="296.21630859375">
+            <Text fx:id="studentIdAndName" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Id" wrappingWidth="296.21630859375">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Text>
-            <Text fx:id="dob" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="167.21630859375">
+            <Text fx:id="date" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="167.21630859375">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Text>
-            <Text fx:id="dob1" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="103.21630859375">
+            <Text fx:id="status" fill="WHITE" opacity="0.59" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="103.21630859375">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>

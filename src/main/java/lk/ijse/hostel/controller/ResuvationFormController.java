@@ -15,10 +15,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
-import lk.ijse.hostel.projection.CustomDTO;
 import lk.ijse.hostel.dto.ReservationDTO;
 import lk.ijse.hostel.dto.RoomDTO;
 import lk.ijse.hostel.dto.StudentDTO;
+import lk.ijse.hostel.projection.CustomDTO;
 import lk.ijse.hostel.service.ServiceFactory;
 import lk.ijse.hostel.service.custom.ResuvationService;
 import lk.ijse.hostel.service.custom.RoomService;
@@ -91,7 +91,7 @@ public class ResuvationFormController implements Initializable {
     public void addOnMouseClick(MouseEvent event) {
         addUpdatePane.setVisible(true);
         hidePane.setVisible(true);
-
+        vBoxCart.getChildren().clear();
     }
 
     public void btnAddOnMouseEntered(MouseEvent event) {
@@ -132,6 +132,7 @@ public class ResuvationFormController implements Initializable {
 
         if (save) {
             new Alert(Alert.AlertType.CONFIRMATION, "New Student Added!").showAndWait();
+            loadAllIds();
             textField();
             vBoxCart.getChildren().clear();
             customDTOList.clear();
@@ -198,7 +199,7 @@ public class ResuvationFormController implements Initializable {
 
     private void setStudentIdInComboBox() {
         List<String> list = studentService.getAllStudentId();
-            cmbStudentId.getItems().addAll(list);
+        cmbStudentId.getItems().addAll(list);
     }
 
     private String getRoom() {
@@ -211,6 +212,7 @@ public class ResuvationFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadAllIds();
         setRoomIdInComboBox();
         setStudentIdInComboBox();
         setStatusInComboBox();
@@ -221,6 +223,33 @@ public class ResuvationFormController implements Initializable {
         status.add("Paid");
         status.add("Pending Payment");
         cmbPaymentStatus.getItems().addAll(status);
+    }
+
+    public void loadAllIds() {
+        vBox.getChildren().clear();
+        try {
+            List<String> id = resuvationService.getAllReservationId();
+            for (int i = 0; i < id.size(); i++) {
+                loadAllStudent(id.get(i));
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void loadAllStudent(String id) {
+
+        try {
+            FXMLLoader loader = new FXMLLoader(ResuvationFormController.class.getResource("/view/ResuvationManageBarForm.fxml"));
+            Parent root = loader.load();
+            ResuvationManageBarFormController controller = loader.getController();
+            controller.setData(id);
+            vBox.getChildren().add(root);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     private String getStatus() {

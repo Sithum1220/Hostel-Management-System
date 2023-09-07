@@ -1,6 +1,7 @@
 package lk.ijse.hostel.repository.custom.impl;
 
 import lk.ijse.hostel.entity.Reservation;
+import lk.ijse.hostel.entity.Student;
 import lk.ijse.hostel.repository.custom.ResuvationRepository;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -22,7 +23,7 @@ public class ResuvationRepositoryImpl implements ResuvationRepository {
 
     @Override
     public Reservation get(String s) {
-        return null;
+        return session.get(Reservation.class, s);
     }
 
     @Override

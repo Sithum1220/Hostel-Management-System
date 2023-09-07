@@ -1,11 +1,11 @@
 package lk.ijse.hostel.service.custom.impl;
 
 import lk.ijse.hostel.dto.ReservationDTO;
+import lk.ijse.hostel.entity.Reservation;
 import lk.ijse.hostel.repository.RepositoryFactory;
 import lk.ijse.hostel.repository.custom.ResuvationRepository;
 import lk.ijse.hostel.repository.custom.RoomRepository;
 import lk.ijse.hostel.service.custom.ResuvationService;
-import lk.ijse.hostel.service.custom.RoomService;
 import lk.ijse.hostel.utill.SessionFactoryConfig;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -13,15 +13,15 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class ResuvationServiceImpl implements ResuvationService {
-    private Session session;
-
     ResuvationRepository resuvationRepository = RepositoryFactory.getInstance()
             .getRepository(RepositoryFactory.RepositoryType.RESERVATION_REPOSITORY);
     RoomRepository roomRepository = RepositoryFactory.getInstance()
             .getRepository(RepositoryFactory.RepositoryType.ROOM_REPOSITORY);
+    private Session session;
+
     @Override
     public boolean save(ReservationDTO reservationDTO) {
-         session = SessionFactoryConfig.getInstance().getSession();
+        session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
         try {
             session.save(reservationDTO.toEntity());
@@ -77,6 +77,31 @@ public class ResuvationServiceImpl implements ResuvationService {
             transaction.rollback();
             session.close();
             return "RE001";
+        }
+    }
+
+    @Override
+    public ReservationDTO getReservetion(String id) {
+
+        session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        resuvationRepository.setSession(session);
+        Reservation reservation;
+        try {
+            reservation = resuvationRepository.get(id);
+            transaction.commit();
+            session.close();
+            return new ReservationDTO(
+                    reservation.getReservationId(),
+                    reservation.getStudents().getStudentId(),
+                    reservation.getRooms().getId(),
+                    String.valueOf(reservation.getDate()),
+                    reservation.getStatus()
+            );
+
+        } catch (Exception e) {
+            session.close();
+            return null;
         }
     }
 }

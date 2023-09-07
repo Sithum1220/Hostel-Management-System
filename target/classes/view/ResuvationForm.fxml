@@ -115,7 +115,7 @@
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label opacity="0.74" text="Student Id:Student Name" textFill="WHITE">
+                  <Label opacity="0.74" prefHeight="16.0" prefWidth="154.0" text="Student Id" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font>
@@ -192,14 +192,14 @@
                         </Label>
                      </children>
                   </HBox>
-                  <ScrollPane layoutX="47.0" layoutY="54.0" prefHeight="463.0" prefWidth="821.0" style="-fx-background-color: #2B2B2Be;">
+                  <ScrollPane layoutX="47.0" layoutY="64.0" prefHeight="463.0" prefWidth="821.0" style="-fx-background-color: #2B2B2Be;">
                      <content>
                         <VBox fx:id="vBoxCart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="803.0" style="-fx-background-color: #2B2B2B;" />
                      </content>
                   </ScrollPane>
-                  <AnchorPane layoutX="851.0" layoutY="54.0" prefHeight="463.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
-                  <AnchorPane layoutX="44.0" layoutY="516.0" prefHeight="8.0" prefWidth="821.0" style="-fx-background-color: #2B2B2B;" />
-                  <AnchorPane layoutX="28.0" layoutY="55.0" prefHeight="461.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
+                  <AnchorPane layoutX="851.0" layoutY="64.0" prefHeight="463.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
+                  <AnchorPane layoutX="44.0" layoutY="526.0" prefHeight="8.0" prefWidth="821.0" style="-fx-background-color: #2B2B2B;" />
+                  <AnchorPane layoutX="28.0" layoutY="68.0" prefHeight="461.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
                   <AnchorPane layoutX="42.0" layoutY="54.0" prefHeight="16.0" prefWidth="814.0" style="-fx-background-color: #2B2B2B;" />
                </children>
             </AnchorPane>
