@@ -1,5 +1,6 @@
 package lk.ijse.hostel.repository;
 
+import lk.ijse.hostel.repository.custom.impl.ResuvationRepositoryImpl;
 import lk.ijse.hostel.repository.custom.impl.RoomRepositoryImpl;
 import lk.ijse.hostel.repository.custom.impl.StudentRepositoryImpl;
 
@@ -13,7 +14,7 @@ public class RepositoryFactory {
     }
 
     public enum RepositoryType{
-        STUDENT_REPOSITORY, ROOM_REPOSITORY
+        STUDENT_REPOSITORY, ROOM_REPOSITORY,RESERVATION_REPOSITORY
     }
 
     public <T extends SuperRepository>T getRepository(RepositoryType repositoryType){
@@ -22,6 +23,8 @@ public class RepositoryFactory {
                 return (T) new StudentRepositoryImpl();
             case ROOM_REPOSITORY:
                 return (T) new RoomRepositoryImpl();
+            case RESERVATION_REPOSITORY:
+                return (T) new ResuvationRepositoryImpl();
             default:
                 return null;
         }

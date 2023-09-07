@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -110,7 +110,7 @@
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label opacity="0.74" text="Room Type" textFill="WHITE">
+                  <Label opacity="0.74" prefHeight="16.0" prefWidth="73.0" text="Room ID" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font>
@@ -132,7 +132,7 @@
                   </Label>
                </children>
             </HBox>
-            <ScrollPane fx:id="scrollPane" layoutX="47.0" layoutY="54.0" prefHeight="463.0" prefWidth="1014.0" style="-fx-background-color: #2B2B2Be;">
+            <ScrollPane layoutX="47.0" layoutY="54.0" prefHeight="463.0" prefWidth="1014.0" style="-fx-background-color: #2B2B2Be;">
                <content>
                   <VBox fx:id="vBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="996.0" style="-fx-background-color: #2B2B2B;" />
                </content>
@@ -145,14 +145,11 @@
       </AnchorPane>
       <Pane fx:id="addUpdatePane" layoutX="389.0" layoutY="116.0" prefHeight="693.0" prefWidth="945.0" styleClass="addPane" visible="false">
          <children>
-            <JFXTextField layoutX="287.0" layoutY="89.0" prefHeight="25.0" prefWidth="156.0" promptText="Key Money" styleClass="addText" />
-            <JFXButton layoutX="652.0" layoutY="84.0" onAction="#doneOnAction" prefHeight="35.0" prefWidth="92.0" styleClass="actionBtn" stylesheets="@../style/StudentManageFormStyle.css" text="Add" textFill="WHITE">
+            <JFXButton layoutX="652.0" layoutY="84.0" onAction="#addOnAction" prefHeight="35.0" prefWidth="92.0" styleClass="actionBtn" stylesheets="@../style/StudentManageFormStyle.css" text="Add" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="17.0" />
                </font>
             </JFXButton>
-            <ComboBox layoutX="93.0" layoutY="25.0" prefWidth="150.0" promptText="Room Type" style="-fx-background-color: transparent;" styleClass="addText" />
-            <ComboBox layoutX="93.0" layoutY="89.0" prefWidth="150.0" promptText="Student ID" style="-fx-background-color: transparent;" styleClass="addText" />
             <JFXButton layoutX="762.0" layoutY="84.0" onAction="#doneOnAction" prefHeight="35.0" prefWidth="92.0" styleClass="actionBtn" stylesheets="@../style/StudentManageFormStyle.css" text="Done" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="17.0" />
@@ -183,21 +180,21 @@
                               <Font name="Arial Bold" size="13.0" />
                            </font>
                         </Label>
-                        <Label opacity="0.74" text="Key Money" textFill="WHITE">
+                        <Label opacity="0.74" text="Status" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="13.0" />
                            </font>
                         </Label>
-                        <Label opacity="0.74" text="QTY" textFill="WHITE">
+                        <Label opacity="0.74" text="Date" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="13.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <ScrollPane fx:id="scrollPane1" layoutX="47.0" layoutY="54.0" prefHeight="463.0" prefWidth="821.0" style="-fx-background-color: #2B2B2Be;">
+                  <ScrollPane layoutX="47.0" layoutY="54.0" prefHeight="463.0" prefWidth="821.0" style="-fx-background-color: #2B2B2Be;">
                      <content>
-                        <VBox fx:id="vBox1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="803.0" style="-fx-background-color: #2B2B2B;" />
+                        <VBox fx:id="vBoxCart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="803.0" style="-fx-background-color: #2B2B2B;" />
                      </content>
                   </ScrollPane>
                   <AnchorPane layoutX="851.0" layoutY="54.0" prefHeight="463.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
@@ -206,6 +203,14 @@
                   <AnchorPane layoutX="42.0" layoutY="54.0" prefHeight="16.0" prefWidth="814.0" style="-fx-background-color: #2B2B2B;" />
                </children>
             </AnchorPane>
+            <Label fx:id="lblRoomType" layoutX="287.0" layoutY="25.0" prefHeight="25.0" prefWidth="126.0" text="Room Type" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cmbPaymentStatus" layoutX="287.0" layoutY="89.0" prefHeight="25.0" prefWidth="150.0" promptText="Payment Status" styleClass="addText" />
+            <JFXComboBox fx:id="cmbStudentId" layoutX="93.0" layoutY="89.0" prefHeight="25.0" prefWidth="150.0" promptText="Student ID" styleClass="addText" />
+            <JFXComboBox fx:id="cmbRoomId" layoutX="93.0" layoutY="26.0" prefHeight="25.0" prefWidth="150.0" promptText="Room ID" styleClass="addText" />
          </children>
       </Pane>
    </children>

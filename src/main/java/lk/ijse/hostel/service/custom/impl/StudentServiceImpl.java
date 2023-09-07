@@ -45,6 +45,7 @@ public class StudentServiceImpl implements StudentService {
             transaction.commit();
             return studentRepository.getAllId();
         } catch (Exception e) {
+            transaction.rollback();
             e.printStackTrace();
         } finally {
             session.close();
@@ -73,6 +74,7 @@ public class StudentServiceImpl implements StudentService {
             session.close();
             return "S00" + idIndex;
         } catch (Exception e) {
+            transaction.rollback();
             session.close();
             return "S001";
         }
@@ -98,7 +100,6 @@ public class StudentServiceImpl implements StudentService {
                     student.getGender()
             );
         } catch (Exception e) {
-            transaction.rollback();
             session.close();
             return null;
         }

@@ -17,11 +17,10 @@ import java.time.LocalDate;
 @Entity
 public class Reservation {
     @Id
-    @Column( columnDefinition = "VARCHAR(64)")
+    @Column( columnDefinition = "VARCHAR(65)")
     private String reservationId;
     private LocalDate date;
     private String status;
-
     @ManyToOne
     private Student students;
 

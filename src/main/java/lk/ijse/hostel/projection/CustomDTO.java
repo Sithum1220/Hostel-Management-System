@@ -9,6 +9,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class StudentIdProjection {
-    private String student_id;
+public class CustomDTO {
+    private String studentId;
+    private String roomId;
+    private String roomType;
+    private String studentName;
+    private String status;
+    private String date;
 }

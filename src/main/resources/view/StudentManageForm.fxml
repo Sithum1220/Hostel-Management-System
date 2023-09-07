@@ -136,14 +136,14 @@
                   </Label>
                </children>
             </HBox>
-            <ScrollPane fx:id="scrollPane" layoutX="47.0" layoutY="54.0" prefHeight="463.0" prefWidth="1014.0" style="-fx-background-color: #2B2B2Be;">
+            <ScrollPane fx:id="scrollPane" layoutX="47.0" layoutY="66.0" prefHeight="463.0" prefWidth="1014.0" style="-fx-background-color: #2B2B2Be;">
                <content>
                   <VBox fx:id="vBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="996.0" style="-fx-background-color: #2B2B2B;" />
                </content>
             </ScrollPane>
-            <AnchorPane layoutX="1042.0" layoutY="55.0" prefHeight="461.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
-            <AnchorPane layoutX="44.0" layoutY="516.0" prefHeight="8.0" prefWidth="1021.0" style="-fx-background-color: #2B2B2B;" />
-            <AnchorPane layoutX="28.0" layoutY="55.0" prefHeight="461.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
+            <AnchorPane layoutX="1044.0" layoutY="66.0" prefHeight="461.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
+            <AnchorPane layoutX="44.0" layoutY="526.0" prefHeight="8.0" prefWidth="1021.0" style="-fx-background-color: #2B2B2B;" />
+            <AnchorPane layoutX="28.0" layoutY="65.0" prefHeight="461.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
             <AnchorPane layoutX="42.0" layoutY="54.0" prefHeight="16.0" prefWidth="1021.0" style="-fx-background-color: #2B2B2B;" />
          </children>
       </AnchorPane>
@@ -155,7 +155,7 @@
             <JFXTextField fx:id="street" layoutX="188.0" layoutY="71.0" prefHeight="25.0" prefWidth="156.0" promptText="Street" styleClass="addText" />
             <JFXTextField fx:id="lane" layoutX="14.0" layoutY="71.0" prefHeight="25.0" prefWidth="156.0" promptText="House No" styleClass="addText" />
             <JFXTextField fx:id="mobileNo" layoutX="353.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" promptText="Contact Number" styleClass="addText" />
-            <DatePicker fx:id="dob" layoutX="186.0" layoutY="118.0" prefHeight="27.0" prefWidth="156.0" style="-fx-background-color: transparent;" styleClass="addText" />
+            <DatePicker fx:id="dob" layoutX="186.0" layoutY="118.0" prefHeight="27.0" prefWidth="156.0" promptText="Birthday" style="-fx-background-color: transparent;" styleClass="addText" />
             <JFXButton fx:id="btnCrud" layoutX="401.0" layoutY="120.0" onAction="#doneOnAction" prefHeight="35.0" prefWidth="92.0" styleClass="actionBtn" stylesheets="@../style/StudentManageFormStyle.css" text="Save" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="17.0" />

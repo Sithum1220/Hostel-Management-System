@@ -16,7 +16,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import lk.ijse.hostel.dto.RoomDTO;
-import lk.ijse.hostel.dto.StudentDTO;
 import lk.ijse.hostel.service.ServiceFactory;
 import lk.ijse.hostel.service.custom.RoomService;
 import lk.ijse.hostel.utill.Navigation;
@@ -57,8 +56,6 @@ public class RoomsManageFormController implements Initializable {
     }
 
     public void doneOnAction(ActionEvent actionEvent) {
-        addUpdatePane.setVisible(false);
-        hidePane.setVisible(false);
 
         if (btnCrud.getText().equals("Save")) {
 
@@ -69,7 +66,9 @@ public class RoomsManageFormController implements Initializable {
                     Integer.parseInt(roomQTY.getText())
 
             ));
-
+            textFeild();
+            addUpdatePane.setVisible(false);
+            hidePane.setVisible(false);
             if (save != null) {
                 new Alert(Alert.AlertType.CONFIRMATION, "New Room Added!").showAndWait();
                 loadAllIds();
@@ -84,7 +83,9 @@ public class RoomsManageFormController implements Initializable {
                     keyMoney.getText(),
                     Integer.parseInt(roomQTY.getText())
             ));
-
+            textFeild();
+            addUpdatePane.setVisible(false);
+            hidePane.setVisible(false);
             if (update) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Room Updated!").showAndWait();
                 loadAllIds();
@@ -183,6 +184,7 @@ public class RoomsManageFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadAllIds();
     }
+
     public void update(String ids) {
         updateId = ids;
         addUpdatePane.setVisible(true);
@@ -194,4 +196,9 @@ public class RoomsManageFormController implements Initializable {
         btnCrud.setText("Update");
     }
 
+    public void textFeild() {
+        roomType.clear();
+        roomQTY.clear();
+        keyMoney.clear();
+    }
 }

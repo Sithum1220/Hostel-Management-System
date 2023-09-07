@@ -106,12 +106,6 @@ public class StudentManageFormController implements Initializable {
     }
 
     public void doneOnAction(ActionEvent actionEvent) {
-        addUpdatePane.setVisible(false);
-        hidePane.setVisible(false);
-
-        System.out.println(first_name.getText());
-
-
         if (btnCrud.getText().equals("Save")) {
             Name name = new Name();
             name.setFirst_name(first_name.getText());
@@ -130,7 +124,9 @@ public class StudentManageFormController implements Initializable {
                     getGender()
 
             ));
-
+            textField();
+            addUpdatePane.setVisible(false);
+            hidePane.setVisible(false);
             if (save != null) {
                 new Alert(Alert.AlertType.CONFIRMATION, "New Student Added!").showAndWait();
                 loadAllIds();
@@ -155,12 +151,16 @@ public class StudentManageFormController implements Initializable {
                     dob.getValue(),
                     getGender()
             ));
-
+            textField();
+            addUpdatePane.setVisible(false);
+            hidePane.setVisible(false);
             if (update) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Student Updated!").showAndWait();
                 loadAllIds();
+
             } else {
                 new Alert(Alert.AlertType.ERROR, "Student Not Updated!").show();
+
             }
         }
     }
@@ -251,5 +251,16 @@ public class StudentManageFormController implements Initializable {
         cmbGender.setValue(studentDTO.getGender());
         dob.setValue(studentDTO.getDob());
         btnCrud.setText("Update");
+    }
+
+    public void textField(){
+        first_name.clear();
+        last_name.clear();
+        mobileNo.clear();
+        lane.clear();
+        street.clear();
+        city.clear();
+        cmbGender.getItems().clear();
+        setDataInComboBox();
     }
 }
