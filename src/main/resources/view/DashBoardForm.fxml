@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="875.0" prefWidth="1478.0" stylesheets="@../style/DashBoardStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.DashBoardFormController">
    <children>
@@ -33,17 +34,7 @@
             <Font size="39.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="1042.0" layoutY="-4.0" opacity="0.64" prefHeight="114.0" prefWidth="168.0" text="12" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="100.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="1052.0" layoutY="95.0" opacity="0.64" prefHeight="108.0" prefWidth="160.0" text="29" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="100.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="913.0" layoutY="192.0" opacity="0.64" prefHeight="39.0" prefWidth="438.0" text="Sunday, 27 August" textFill="WHITE">
+      <Label fx:id="date" alignment="CENTER" layoutX="913.0" layoutY="192.0" opacity="0.64" prefHeight="39.0" prefWidth="438.0" text="Sunday, 27 August" textFill="WHITE">
          <font>
             <Font size="40.0" />
          </font>
@@ -85,7 +76,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="19.0" layoutY="433.0" opacity="0.64" prefHeight="29.0" prefWidth="126.0" text="Resuvation" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="24.0" layoutY="433.0" opacity="0.64" prefHeight="29.0" prefWidth="126.0" text="Reservation" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
@@ -168,5 +159,15 @@
             </Label>
          </children>
       </AnchorPane>
+      <Text fx:id="hour" fill="WHITE" layoutX="1071.0" layoutY="95.0" opacity="0.64" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+         <font>
+            <Font name="Arial Bold" size="100.0" />
+         </font>
+      </Text>
+      <Text fx:id="min" fill="WHITE" layoutX="1070.0" layoutY="190.0" opacity="0.64" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+         <font>
+            <Font name="Arial Bold" size="100.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

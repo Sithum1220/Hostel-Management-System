@@ -1,5 +1,6 @@
 package lk.ijse.hostel.service.custom.impl;
 
+import lk.ijse.hostel.entity.Room;
 import lk.ijse.hostel.repository.RepositoryFactory;
 import lk.ijse.hostel.repository.custom.DashboardRepository;
 import lk.ijse.hostel.repository.custom.RoomRepository;
@@ -7,6 +8,8 @@ import lk.ijse.hostel.repository.custom.StudentRepository;
 import lk.ijse.hostel.service.custom.DashboardService;
 import lk.ijse.hostel.utill.SessionFactoryConfig;
 import org.hibernate.Session;
+
+import java.util.ArrayList;
 
 public class DashboardServiceImpl implements DashboardService {
 
@@ -25,5 +28,19 @@ public class DashboardServiceImpl implements DashboardService {
         }else {
             return allPendingPaymentCount;
         }
+    }
+
+    @Override
+    public int getRoomCount() {
+        ArrayList<Room> rooms;
+        session = SessionFactoryConfig.getInstance().getSession();
+        roomRepository.setSession(session);
+        rooms = roomRepository.getAllRooms();
+        int count = 0;
+        for (Room r : rooms) {
+            count += r.getQty();
+        }
+        System.out.println(count);
+        return count;
     }
 }

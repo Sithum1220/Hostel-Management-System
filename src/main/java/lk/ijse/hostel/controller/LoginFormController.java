@@ -18,11 +18,11 @@ import static javafx.scene.paint.Color.RED;
 public class LoginFormController {
     public Pane signUpPane;
     public JFXTextField singUpUserName;
-    public JFXTextField singUpPassword;
-    public JFXTextField singUpConfirmPassword;
     public JFXPasswordField loginPassword;
     public JFXTextField loginUserName;
     public JFXTextField passwordShow;
+    public JFXPasswordField singUpPassword;
+    public JFXPasswordField singUpConfirmPassword;
 
     private UserService userService = ServiceFactory.getInstance().getServiceFactory(ServiceFactory.ServiceType.USER_Service);
 
@@ -69,34 +69,37 @@ public class LoginFormController {
     }
 
     public void btnSignUpOnAction(ActionEvent actionEvent) {
-        signUpPane.setVisible(false);
 
         if (singUpUserName.getText().isEmpty() && singUpPassword.getText().isEmpty()) {
             new Alert(Alert.AlertType.ERROR, "Added Data First!").show();
 
         } else {
-            UserDTO userDTO = new UserDTO();
-            userDTO.setUserName(singUpUserName.getText());
-            userDTO.setPassWord(singUpPassword.getText());
-            String save = userService.save(userDTO);
-            if (save != null) {
-                new Alert(Alert.AlertType.CONFIRMATION, "User Added!").showAndWait();
-
+            String tempSingUpPassword = singUpPassword.getText();
+            String tempSingUpConfirmPassword = singUpConfirmPassword.getText();
+            if (tempSingUpPassword.equals(tempSingUpConfirmPassword)) {
+                System.out.println("Paw");
+                UserDTO userDTO = new UserDTO();
+                userDTO.setUserName(singUpUserName.getText());
+                userDTO.setPassWord(singUpPassword.getText());
+                String save = userService.save(userDTO);
+                if (save != null) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "User Added!").showAndWait();
+                    signUpPane.setVisible(false);
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Not Added!").show();
+                }
             } else {
-                new Alert(Alert.AlertType.ERROR, "Not Added!").show();
-
+                new Alert(Alert.AlertType.ERROR, "Password Not Match").showAndWait();
             }
-
-            signUpPane.setVisible(false);
-
             clearTextFeild();
         }
     }
 
     public void clearTextFeild() {
-        singUpUserName.setText(" ");
-        singUpPassword.setText(" ");
-        loginPassword.setText(" ");
-        loginUserName.setText(" ");
+        singUpUserName.clear();
+        singUpPassword.clear();
+        loginPassword.clear();
+        loginUserName.clear();
+        singUpConfirmPassword.clear();
     }
 }

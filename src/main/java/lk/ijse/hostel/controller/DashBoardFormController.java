@@ -11,6 +11,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 import lk.ijse.hostel.dto.StudentDTO;
 import lk.ijse.hostel.service.ServiceFactory;
@@ -20,6 +21,8 @@ import lk.ijse.hostel.utill.Navigation;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -27,6 +30,10 @@ public class DashBoardFormController implements Initializable {
     public Label pendingPayment;
     public Label availableRooms;
     public VBox vBox;
+   
+    public Label date;
+    public Text hour;
+    public Text min;
     DashboardService dashboardService = ServiceFactory.getInstance().getServiceFactory(ServiceFactory.ServiceType.DASHBOARD_SERVICE);
     QueryService queryService = ServiceFactory.getInstance().getServiceFactory(ServiceFactory.ServiceType.QUARY_SERVICE);
 
@@ -75,9 +82,12 @@ public class DashBoardFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         pendingPayment.setText(
                 String.valueOf(dashboardService.getPendingPaymentCount())
         );
+
+        availableRooms.setText(String.valueOf(dashboardService.getRoomCount()));
 
         List<StudentDTO> allStudent = queryService.getAllPendingPaymentStudent();
         try {
@@ -89,5 +99,28 @@ public class DashBoardFormController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        time();
+    }
+
+    private void time() {
+        Thread thread = new Thread(() -> {
+            SimpleDateFormat format = new SimpleDateFormat("hh:mm");
+            try {
+                while (true) {
+                    Thread.sleep(1000);
+                    String format1 = format.format(new Date());
+                    String[] split = format1.split(":");
+                    min.setText(split[1]);
+                    hour.setText(split[0]);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        thread.start();
+
+        SimpleDateFormat format = new SimpleDateFormat("EEE, MMM d");
+        date.setText(format.format(new Date()));
     }
 }

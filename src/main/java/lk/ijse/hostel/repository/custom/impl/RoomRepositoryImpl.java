@@ -5,6 +5,7 @@ import lk.ijse.hostel.repository.custom.RoomRepository;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RoomRepositoryImpl implements RoomRepository {
@@ -42,4 +43,12 @@ public class RoomRepositoryImpl implements RoomRepository {
         this.session = session;
     }
 
+    @Override
+    public ArrayList<Room> getAllRooms() {
+        String sqlQuery = "FROM Room";
+        Query query = session.createQuery(sqlQuery);
+        List list = query.list();
+        session.close();
+        return (ArrayList<Room>) list;
+    }
 }
