@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -23,14 +24,15 @@
                   <Font name="Arial Bold" size="47.0" />
                </font>
             </Label>
-            <JFXTextField alignment="CENTER" layoutX="39.0" layoutY="137.0" prefHeight="19.0" prefWidth="212.0" promptText="User Name" />
-            <JFXTextField alignment="CENTER" layoutX="39.0" layoutY="200.0" prefHeight="29.0" prefWidth="212.0" promptText="Password" />
+            <JFXTextField fx:id="loginUserName" alignment="CENTER" layoutX="39.0" layoutY="137.0" prefHeight="19.0" prefWidth="212.0" promptText="User Name" />
             <JFXButton layoutX="95.0" layoutY="283.0" onAction="#btnLoginOnAction" prefHeight="39.0" prefWidth="100.0" styleClass="login-button" text="Login" />
             <Label layoutX="40.0" layoutY="240.0" onMouseClicked="#createAccountOnMouseClick" opacity="0.69" prefHeight="21.0" prefWidth="85.0" styleClass="createAccountText" text="Create Account" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <JFXPasswordField fx:id="loginPassword" alignment="CENTER" layoutX="39.0" layoutY="194.0" prefHeight="31.0" prefWidth="212.0" promptText="Password" />
+            <JFXTextField fx:id="passwordShow" alignment="CENTER" layoutX="39.0" layoutY="137.0" prefHeight="19.0" prefWidth="212.0" />
          </children>
       </Pane>
       <Label layoutX="29.0" layoutY="363.0" opacity="0.59" prefHeight="39.0" prefWidth="100.0" text="126, Colombo" textFill="WHITE">
@@ -56,9 +58,8 @@
                </font>
             </Label>
             <JFXTextField fx:id="singUpUserName" alignment="CENTER" layoutX="39.0" layoutY="137.0" prefHeight="19.0" prefWidth="212.0" promptText="User Name" />
-            <JFXTextField fx:id="singUpPassword" alignment="CENTER" layoutX="38.0" layoutY="191.0" prefHeight="29.0" prefWidth="212.0" promptText="Password" />
             <JFXButton layoutX="94.0" layoutY="298.0" onAction="#btnSignUpOnAction" prefHeight="39.0" prefWidth="100.0" styleClass="login-button" text="Sing Up" />
-            <JFXTextField fx:id="singUpConfirmPassword" alignment="CENTER" layoutX="36.0" layoutY="244.0" prefHeight="29.0" prefWidth="212.0" promptText="Confirm Password" />
+            <JFXTextField fx:id="singUpConfirmPassword" alignment="CENTER" layoutX="39.0" layoutY="243.0" prefHeight="29.0" prefWidth="212.0" promptText="Confirm Password" />
          </children>
       </Pane>
    </children>

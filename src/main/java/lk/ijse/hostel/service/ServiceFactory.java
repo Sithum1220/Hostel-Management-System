@@ -12,7 +12,7 @@ public class ServiceFactory {
     }
 
     public enum ServiceType{
-        STUDENT_SERVICE,ROOM_SERVICE,RESERVATION_SERVICE,DASHBOARD_SERVICE,QUARY_SERVICE
+        STUDENT_SERVICE,ROOM_SERVICE,RESERVATION_SERVICE,DASHBOARD_SERVICE,QUARY_SERVICE, USER_Service
     }
 
     public <T extends SuperService>T getServiceFactory(ServiceType serviceType){
@@ -27,6 +27,8 @@ public class ServiceFactory {
                 return (T) new DashboardServiceImpl();
             case QUARY_SERVICE:
                 return (T) new QueryServiceimpl();
+            case USER_Service:
+                return (T) new UserServiceimpl();
             default:
                 return null;
         }
