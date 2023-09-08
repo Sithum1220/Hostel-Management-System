@@ -2,9 +2,12 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
@@ -30,17 +33,17 @@
             <Font size="39.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="1042.0" layoutY="20.0" opacity="0.64" prefHeight="102.0" prefWidth="168.0" text="12" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="1042.0" layoutY="-4.0" opacity="0.64" prefHeight="114.0" prefWidth="168.0" text="12" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="100.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="1052.0" layoutY="127.0" opacity="0.64" prefHeight="108.0" prefWidth="160.0" text="29" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="1052.0" layoutY="95.0" opacity="0.64" prefHeight="108.0" prefWidth="160.0" text="29" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="100.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="913.0" layoutY="244.0" opacity="0.64" prefHeight="63.0" prefWidth="438.0" text="Sunday, 27 August" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="913.0" layoutY="192.0" opacity="0.64" prefHeight="39.0" prefWidth="438.0" text="Sunday, 27 August" textFill="WHITE">
          <font>
             <Font size="40.0" />
          </font>
@@ -48,30 +51,30 @@
       <JFXButton layoutY="60.0" onAction="#btnStudentOnAction" onMouseEntered="#btnMouseEntered" onMouseExited="#btnMouseExit" prefHeight="150.0" prefWidth="244.0" styleClass="actionBtn" text=" " />
       <JFXButton layoutY="241.0" onAction="#btnRoomsOnAction" onMouseEntered="#btnMouseEntered" onMouseExited="#btnMouseExit" prefHeight="150.0" prefWidth="244.0" styleClass="actionBtn" text=" " />
       <JFXButton layoutY="426.0" onAction="#btnResuvationOnAction" onMouseEntered="#btnMouseEntered" onMouseExited="#btnMouseExit" prefHeight="150.0" prefWidth="244.0" styleClass="actionBtn" text=" " />
-      <Label alignment="CENTER" layoutX="29.0" layoutY="679.0" opacity="0.64" prefHeight="56.0" prefWidth="199.0" text="All Rooms" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="35.0" layoutY="627.0" opacity="0.64" prefHeight="56.0" prefWidth="277.0" text="Pending Payment" textFill="WHITE">
          <font>
-            <Font size="45.0" />
+            <Font size="35.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="64.0" layoutY="742.0" opacity="0.64" prefHeight="84.0" prefWidth="126.0" text="21" textFill="WHITE">
-         <font>
-            <Font size="68.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="272.0" layoutY="682.0" opacity="0.64" prefHeight="56.0" prefWidth="265.0" text="All Employee" textFill="WHITE">
-         <font>
-            <Font size="45.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="350.0" layoutY="747.0" opacity="0.64" prefHeight="84.0" prefWidth="86.0" text="22" textFill="WHITE">
+      <Label fx:id="pendingPayment" alignment="CENTER" layoutX="106.0" layoutY="748.0" opacity="0.64" prefHeight="84.0" prefWidth="126.0" text="21" textFill="WHITE">
          <font>
             <Font size="68.0" />
          </font>
       </Label>
-      <Line endX="3.3770713806152344" endY="29.32269287109375" layoutX="49.0" layoutY="776.0" startX="3.3770790100097656" startY="-41.0" stroke="WHITE" />
-      <Line endX="27.97106170654297" endY="20.54925537109375" layoutX="53.0" layoutY="786.0" startX="-1.0000114440917969" startY="20.54925537109375" stroke="WHITE" />
-      <Line endX="3.3770713806152344" endY="29.32269287109375" layoutX="310.0" layoutY="780.0" startX="3.3770790100097656" startY="-41.0" stroke="WHITE" />
-      <Line endX="27.97106170654297" endY="20.54925537109375" layoutX="314.0" layoutY="790.0" startX="-1.0000114440917969" startY="20.54925537109375" stroke="WHITE" />
+      <Label alignment="CENTER" layoutX="348.0" layoutY="631.0" opacity="0.64" prefHeight="56.0" prefWidth="287.0" text="Total Available" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="availableRooms" alignment="CENTER" layoutX="454.0" layoutY="753.0" opacity="0.64" prefHeight="84.0" prefWidth="86.0" text="22" textFill="WHITE">
+         <font>
+            <Font size="68.0" />
+         </font>
+      </Label>
+      <Line endX="3.3770713806152344" endY="29.32269287109375" layoutX="91.0" layoutY="782.0" startX="3.3770790100097656" startY="-41.0" stroke="WHITE" />
+      <Line endX="27.97106170654297" endY="20.54925537109375" layoutX="96.0" layoutY="791.0" startX="-1.0000114440917969" startY="20.54925537109375" stroke="WHITE" />
+      <Line endX="3.3770713806152344" endY="29.32269287109375" layoutX="414.0" layoutY="786.0" startX="3.3770790100097656" startY="-41.0" stroke="WHITE" />
+      <Line endX="27.97106170654297" endY="20.54925537109375" layoutX="418.0" layoutY="796.0" startX="-1.0000114440917969" startY="20.54925537109375" stroke="WHITE" />
       <Label alignment="CENTER" layoutX="20.0" layoutY="67.0" opacity="0.64" prefHeight="21.0" prefWidth="86.0" text="Student" textFill="WHITE">
          <font>
             <Font size="25.0" />
@@ -107,5 +110,63 @@
             <Image url="@../img/icon/icons8-bed-100.png" />
          </image>
       </ImageView>
+      <Label alignment="CENTER" layoutX="27.0" layoutY="678.0" opacity="0.64" prefHeight="56.0" prefWidth="126.0" text="Count" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="368.0" layoutY="679.0" opacity="0.64" prefHeight="56.0" prefWidth="126.0" text="Count" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="716.0" layoutY="251.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="689.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 20;">
+         <children>
+            <Line endX="543.0" layoutX="127.0" layoutY="102.0" opacity="0.4" startX="-97.48080444335938" stroke="WHITE" />
+            <HBox alignment="CENTER_LEFT" layoutX="41.0" layoutY="69.0" prefHeight="30.0" prefWidth="615.0" spacing="80.0">
+               <children>
+                  <Label opacity="0.74" prefHeight="16.0" prefWidth="28.0" text="Id" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label opacity="0.74" prefHeight="16.0" prefWidth="56.0" text="Name" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label opacity="0.74" prefHeight="16.0" prefWidth="61.0" text="Mobile" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label opacity="0.74" prefHeight="16.0" prefWidth="55.0" text="Address" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label opacity="0.74" text="Gender" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <ScrollPane layoutX="37.0" layoutY="120.0" prefHeight="293.0" prefWidth="631.0" style="-fx-background-color: #2B2B2Be;">
+               <content>
+                  <VBox fx:id="vBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="289.0" prefWidth="615.0" style="-fx-background-color: #2B2B2B;" />
+               </content>
+            </ScrollPane>
+            <AnchorPane layoutX="653.0" layoutY="118.0" prefHeight="293.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
+            <AnchorPane layoutX="37.0" layoutY="410.0" prefHeight="16.0" prefWidth="631.0" style="-fx-background-color: #2B2B2B;" />
+            <AnchorPane layoutX="18.0" layoutY="120.0" prefHeight="302.0" prefWidth="20.0" style="-fx-background-color: #2B2B2B;" />
+            <AnchorPane layoutX="28.0" layoutY="105.0" prefHeight="16.0" prefWidth="631.0" style="-fx-background-color: #2B2B2B;" />
+            <Label alignment="CENTER" layoutX="28.0" layoutY="6.0" opacity="0.64" prefHeight="50.0" prefWidth="315.0" text="Pending Payment" textFill="WHITE">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

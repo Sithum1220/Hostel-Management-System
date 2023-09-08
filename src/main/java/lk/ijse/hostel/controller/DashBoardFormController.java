@@ -3,15 +3,33 @@ package lk.ijse.hostel.controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import lk.ijse.hostel.dto.StudentDTO;
+import lk.ijse.hostel.service.ServiceFactory;
+import lk.ijse.hostel.service.custom.DashboardService;
+import lk.ijse.hostel.service.custom.QueryService;
 import lk.ijse.hostel.utill.Navigation;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
-public class DashBoardFormController {
+public class DashBoardFormController implements Initializable {
+    public Label pendingPayment;
+    public Label availableRooms;
+    public VBox vBox;
+    DashboardService dashboardService = ServiceFactory.getInstance().getServiceFactory(ServiceFactory.ServiceType.DASHBOARD_SERVICE);
+    QueryService queryService = ServiceFactory.getInstance().getServiceFactory(ServiceFactory.ServiceType.QUARY_SERVICE);
+
     public void btnMouseEntered(MouseEvent event) {
 
         if (event.getSource() instanceof JFXButton) {
@@ -44,14 +62,32 @@ public class DashBoardFormController {
     }
 
     public void btnStudentOnAction(ActionEvent actionEvent) throws IOException {
-        Navigation.switchNavigation("StudentManageForm.fxml",actionEvent);
+        Navigation.switchNavigation("StudentManageForm.fxml", actionEvent);
     }
 
     public void btnRoomsOnAction(ActionEvent actionEvent) throws IOException {
-        Navigation.switchNavigation("RoomsMnageForm.fxml",actionEvent);
+        Navigation.switchNavigation("RoomsMnageForm.fxml", actionEvent);
     }
 
     public void btnResuvationOnAction(ActionEvent actionEvent) throws IOException {
-        Navigation.switchNavigation("ResuvationForm.fxml",actionEvent);
+        Navigation.switchNavigation("ResuvationForm.fxml", actionEvent);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        pendingPayment.setText(
+                String.valueOf(dashboardService.getPendingPaymentCount())
+        );
+
+        List<StudentDTO> allStudent = queryService.getAllPendingPaymentStudent();
+        try {
+            FXMLLoader loader = new FXMLLoader(DashBoardFormController.class.getResource("/view/PendingPaymentBarForm.fxml"));
+            Parent root = loader.load();
+            PendingPaymentBarFormController controller = loader.getController();
+            controller.setData(allStudent);
+            vBox.getChildren().add(root);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
