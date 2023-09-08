@@ -120,13 +120,16 @@ public class ResuvationFormController implements Initializable {
 
         boolean save = false;
         for (int i = 0; i < customDTOList.size(); i++) {
+            RoomDTO roomDTO = roomService.getRoom(customDTOList.get(i).getRoomId());
+            roomDTO.setQty(roomDTO.getQty() - 1);
+
             save = resuvationService.save(new ReservationDTO(
                     resuvationService.newId(),
                     customDTOList.get(i).getStudentId(),
                     customDTOList.get(i).getRoomId(),
                     customDTOList.get(i).getDate(),
                     customDTOList.get(i).getStatus()
-            ));
+            ), roomDTO);
         }
 
 

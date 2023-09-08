@@ -1,10 +1,13 @@
 package lk.ijse.hostel.service.custom.impl;
 
 import lk.ijse.hostel.dto.ReservationDTO;
+import lk.ijse.hostel.dto.RoomDTO;
+import lk.ijse.hostel.dto.StudentDTO;
 import lk.ijse.hostel.entity.Reservation;
 import lk.ijse.hostel.repository.RepositoryFactory;
 import lk.ijse.hostel.repository.custom.ResuvationRepository;
 import lk.ijse.hostel.repository.custom.RoomRepository;
+import lk.ijse.hostel.repository.custom.StudentRepository;
 import lk.ijse.hostel.service.custom.ResuvationService;
 import lk.ijse.hostel.utill.SessionFactoryConfig;
 import org.hibernate.Session;
@@ -17,23 +20,56 @@ public class ResuvationServiceImpl implements ResuvationService {
             .getRepository(RepositoryFactory.RepositoryType.RESERVATION_REPOSITORY);
     RoomRepository roomRepository = RepositoryFactory.getInstance()
             .getRepository(RepositoryFactory.RepositoryType.ROOM_REPOSITORY);
+
+    StudentRepository studentRepository = RepositoryFactory.getInstance()
+            .getRepository(RepositoryFactory.RepositoryType.STUDENT_REPOSITORY);
     private Session session;
 
     @Override
-    public boolean save(ReservationDTO reservationDTO) {
+    public boolean save(ReservationDTO reservationDTO, RoomDTO roomDTO) {
+
+//        try {
+//            session.save(reservationDTO.toEntity());
+//            transaction.commit();
+//            session.close();
+//            return true;
+//        } catch (Exception e) {
+//            transaction.rollback();
+//            session.close();
+//            e.printStackTrace();
+//            return false;
+//        }
         session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
+
+        Session sessions = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction1 = sessions.beginTransaction();
+
         try {
-            session.save(reservationDTO.toEntity());
+
+            resuvationRepository.setSession(session);
+            resuvationRepository.save(reservationDTO.toEntity());
+
+
+            roomRepository.setSession(sessions);
+            roomRepository.update(roomDTO.toEntity());
+
+
             transaction.commit();
             session.close();
+
+            transaction1.commit();
+            sessions.close();
+
             return true;
         } catch (Exception e) {
             transaction.rollback();
-            session.close();
-            e.printStackTrace();
+
+            transaction.rollback();
             return false;
         }
+
+
     }
 
     @Override

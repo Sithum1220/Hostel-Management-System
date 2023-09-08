@@ -4,7 +4,9 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="HostelManagementSystem" value="c74dc328-497a-43ac-b5f2-28cf4d9d5e37" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>

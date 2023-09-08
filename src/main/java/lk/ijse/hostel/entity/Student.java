@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -27,6 +28,6 @@ public class Student {
     private LocalDate dob;
     private String gender;
 
-    @OneToMany(mappedBy = "students",targetEntity = Reservation.class ,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "students",fetch = FetchType.EAGER)
     private List<Reservation> reservations = new ArrayList<>();
 }
